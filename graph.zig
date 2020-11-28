@@ -317,6 +317,5 @@ test "Simple AStar Problem" {
 
     testing.expect(result.visited_count == 3);
     testing.expect(result.path_len == 2.0 * std.math.sqrt(2.0));
-    // TODO not quite sure how to check that the path is identical
-    // testing.expect(std.mem.eql([3]usize,result.path.toOwnedSlice(),[3]usize{0,4,8}));
+    testing.expect(std.mem.eql(usize, &[_]usize{0,4,8},result.path.items));
 }
